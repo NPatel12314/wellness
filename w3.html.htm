@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wellness Works</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <style>
+        body, html {
+            height: 100%;
+            font-family: 'Saguna Book', serif;
+        }
+        .menu {
+            display: none;
+        }
+        .bgimg {
+  	   background-position: center;
+  	   background-size: cover;
+  	   background-image: url("https://www.wellable.co/blog/wp-content/uploads/2024/01/5616689-edited-scaled.jpg");
+  	   min-height: 100%;
+        }
+	.menu {
+  	   display: none;
+        }
+        .tablink {
+            cursor: pointer;
+            color: black;
+        }
+        .tablink:hover {
+            background-color: #888888;
+        }
+        .program-details {
+            display: none;
+        }
+        .program-details.active {
+            display: block;
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, white, grey, black);
+        }
+        .login-container {
+            width: 350px;
+            height: 500px;
+            background: red;
+            overflow: hidden;
+            background: white no-repeat center/cover;
+            border-radius: 10px;
+            box-shadow: 5px 20px 50px #000;
+        }
+        #chk {
+            display: none;
+        }
+        .signup, .login {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        label {
+            color: black;
+            font-size: 2.3em;
+            justify-content: center;
+            display: flex;
+            margin: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
+        input {
+            width: 60%;
+            height: 10px;
+            background: #e0dede;
+            justify-content: center;
+            display: flex;
+            margin: 20px auto;
+            padding: 12px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 60%;
+            height: 40px;
+            margin: 10px auto;
+            justify-content: center;
+            display: block;
+            color: white;
+            background: black;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 30px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: .2s ease-in;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #444444;
+        }
+        .login {
+            height: 460px;
+            background: #eee;
+            border-radius: 60% / 10%;
+            transform: translateY(-180px);
+            transition: .8s ease-in-out;
+        }
+        .login label {
+            color: black;
+            transform: scale(.6);
+        }
+        #chk:checked ~ .login {
+            transform: translateY(-500px);
+        }
+        #chk:checked ~ .login label {
+            transform: scale(1);	
+        }
+        #chk:checked ~ .signup label {
+            transform: scale(.6);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+            <a href="#" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s2">
+            <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+        </div>
+        <div class="w3-col s2">
+            <a href="#program-details" class="w3-button w3-block w3-black">PROGRAM DETAILS</a>
+        </div>
+        <div class="w3-col s2">
+            <a href="#employee-portal" class="w3-button w3-block w3-black">EMPLOYEE PORTAL</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="#resources" class="w3-button w3-block w3-black">RESOURCES</a>
+        </div>
+    </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+        <span class="w3-tag">Open from 9am to 5pm</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+        <span class="w3-text-black" style="font-size:90px">Wellness<br>Works</span>
+    </div>
+    <div class="w3-display-bottomright w3-center w3-padding-large">
+        <span class="w3-text-black">1 E Jackson Blvd, 60604</span>
+    </div>
+</header>
+
+<!-- About Container -->
+<div class="w3-container w3-white w3-small" id="about">
+    <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT</span></h5>
+        <p>Welcome to Wellness Works!</p>
+        <p>We're thrilled to have you join our wellness community. At Wellness Works, we believe that your well-being is essential to your success and happiness both at work and in life. Our comprehensive wellness program is designed to support your physical, mental, and emotional health through a variety of resources, activities, and benefits.</p>
+        <p>Explore our site to find everything you need to start your wellness journey, including fitness classes, nutrition tips, mental health resources, and more. Whether you're looking to boost your energy, manage stress, or simply live a healthier lifestyle, we're here to help you every step of the way.</p>
+        <p>Thank you for being a part of our commitment to creating a healthier, happier workplace. Together, let's thrive!</p>
+        <div class="w3-panel w3-leftbar w3-light-grey">
+            <p><i>"Wellness is the key to workplace success."</i></p>
+            <p>Wellness Comittee: Zara Syed, Nirali Thummar, Kayla Lucas, Ruchitha Mandalupu, Vrushali Dharam</p>
+        </div>
+        <img src="C:\Users\LENOVO\OneDrive\Desktop\Wellness Works\images\2.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+        <p><strong>Opening hours:</strong> Mon-Fri from 9am to 5pm.</p>
+        <p><strong>Address:</strong> 1 E Jackson Blvd, 60604</p>
+    </div>
+</div>
+
+<!-- Program Details Container -->
+<div class="w3-container" id="program-details">
+    <div class="w3-content" style="max-width:1000px">
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">PROGRAM DETAILS</span></h5>
+        <div class="w3-row w3-center w3-bold w3-card w3-padding">
+            <a href="javascript:void(0)" onclick="openProgramDetails(event, 'Activities');" id="myLink">
+                <div class="w3-col s6 tablink">Activities</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openProgramDetails(event, 'Schedule');">
+                <div class="w3-col s6 tablink">Schedule</div>
+            </a>
+        </div>
+        <div id="Activities" class="w3-container program-details w3-padding-48 w3-card w3-bold">
+            <h5>Physical Fitness</h5>
+            <p class="w3-text-grey">Group Fitness Classes, Personal Training, Walking and Running Clubs</p><br>
+            <h5>Mental Well-being</h5>
+            <p class="w3-text-grey">Mindfulness and Meditation, Stress Management Workshops, Counseling Services</p><br>
+            <h5>Nutrition and Healthy Living</h5>
+            <p class="w3-text-grey">Nutrition Seminars, Health Screenings</p><br>
+            <h5>Community and Social Activities</h5>
+            <p class="w3-text-grey">Wellness Challenges, Team-building Activities, Support Groups</p><br>
+        </div>
+        <div id="Schedule" class="w3-container program-details w3-padding-48 w3-card">
+            <h5>July 2024</h5><br>
+            <p class="w3-text-grey">July 3, 12:00 PM - 1:00 PM: Stress Management Workshop (Virtual)</p><br>
+            <p class="w3-text-grey">July 8, 5:30 PM - 6:30 PM: Zumba Class (On-site, Fitness Room)</p><br>
+            <p class="w3-text-grey">July 12, 9:00 AM - 11:00 AM: Health Screening Day (On-site, Wellness Center)</p><br>
+            <p class="w3-text-grey">July 17, 12:00 PM - 1:00 PM: Mindfulness Meditation Workshop (Virtual)</p><br>
+            <p class="w3-text-grey">July 22, 8:00 AM - 10:00 AM: Fun Run (Local Park)</p><br><br>
+            <h5>Aug 2024</h5><br>
+            <p class="w3-text-grey">Aug 5, 12:00 PM - 1:00 PM: Mindfulness Meditation Workshop (Virtual)</p><br>
+            <p class="w3-text-grey">Aug 10, 5:30 PM - 6:30 PM: Group Yoga Class (On-site, Fitness Room)</p><br>
+            <p class="w3-text-grey">Aug 15, 8:00 AM - 10:00 AM: Community Walk (Local Park)</p><br>
+            <p class="w3-text-grey">Aug 20, 12:00 PM - 1:00 PM: Nutrition Seminar: Healthy Eating on a Budget (Virtual)</p><br>
+        </div>
+        <img src="C:\Users\LENOVO\OneDrive\Desktop\Wellness Works\images\3.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+    </div>
+</div><br><br><br><br><br><br><br><br><br>
+
+<script>
+    function openProgramDetails(evt, tabName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("program-details");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("w3-border-red");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("w3-border-red");
+    }
+
+    // Set default tab
+    document.getElementById("myLink").click();
+</script>
+
+
+
+<!-- Employee Portal Container -->
+<div class="w3-container w3-blue w3-small" id="employee-portal">
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="txt" placeholder="User name" required="">
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="pswd" placeholder="Password" required="">
+                <button>Sign up</button>
+            </form>
+        </div>
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="pswd" placeholder="Password" required="">
+                <button>Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
+    <p>Find us at some address at some place.</p>
+    <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
+    <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+    <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
